@@ -1,0 +1,147 @@
+/* Global variable dictionary: key -> [symbol, SI unit, uz name, ru name] */
+window.VARS = {
+  // --- mexanika 6-7
+  rho:['ρ','kg/m³','modda zichligi','плотность вещества'],
+  m:['m','kg','massa','масса'], V:['V','m³','hajm','объём'],
+  v:['υ','m/s','tezlik','скорость'], s:['s','m','yo‘l / ko‘chish','путь / перемещение'],
+  t:['t','s','vaqt','время'], F:['F','N','kuch','сила'],
+  d1:['l₁','m','1-kuch yelkasi','плечо 1'], d2:['l₂','m','2-kuch yelkasi','плечо 2'],
+  F1:['F₁','N','1-kuch','сила 1'], F2:['F₂','N','2-kuch','сила 2'],
+  W:['A','J','mexanik ish','механическая работа'], Np:['N','W','quvvat','мощность'],
+  eta:['η','%','FIK','КПД'], Wf:['A_f','J','foydali ish','полезная работа'], Wt:['A_t','J','to‘la ish','полная работа'],
+  Fo:['F','m','linza fokus masofasi','фокусное расстояние'], d:['d','m','buyumgacha masofa','расстояние до предмета'], f:['f','m','tasvirgacha masofa','расстояние до изображения'],
+  vavg:['υ_o‘rt','m/s','o‘rtacha tezlik','средняя скорость'], stot:['s_umum','m','umumiy yo‘l','весь путь'], ttot:['t_umum','s','umumiy vaqt','всё время'],
+  a:['a','m/s²','tezlanish','ускорение'], v0:['υ₀','m/s','boshlang‘ich tezlik','начальная скорость'],
+  T:['T','s','davr','период'], nu:['ν','Hz','chastota','частота'], Ncnt:['N','','tebranish/aylanish soni','число оборотов/колебаний'],
+  R:['R','m','radius','радиус'], omega:['ω','rad/s','burchak tezlik (siklik chastota)','угловая скорость (цикл. частота)'], an:['aₙ','m/s²','markazga intilma tezlanish','центростремительное ускорение'],
+  ks:['k','N/m','prujina bikrligi','жёсткость пружины'], dl:['Δl','m','cho‘zilish','удлинение'],
+  r:['r','m','orasidagi masofa','расстояние'], m1:['m₁','kg','1-massa','масса 1'], m2:['m₂','kg','2-massa','масса 2'],
+  P:['P','N','jism og‘irligi','вес тела'], mu:['μ','','ishqalanish koeffitsiyenti','коэффициент трения'], Nf:['N','N','tayanch reaksiyasi','сила реакции опоры'],
+  p:['p','Pa','bosim','давление'], S:['S','m²','yuza','площадь'], h:['h','m','balandlik / chuqurlik','высота / глубина'],
+  FA:['F_A','N','Arximed kuchi','сила Архимеда'], Vb:['V_bot','m³','botgan hajm','погружённый объём'], rhol:['ρ_suy','kg/m³','suyuqlik zichligi','плотность жидкости'],
+  // --- issiqlik 8
+  Q:['Q','J','issiqlik miqdori','количество теплоты'], cs:['c','J/(kg·K)','solishtirma issiqlik sig‘imi','удельная теплоёмкость'],
+  t1:['t₁','°C','boshlang‘ich temperatura','начальная температура'], t2:['t₂','°C','oxirgi temperatura','конечная температура'], dt:['Δt','K','temperatura o‘zgarishi','изменение температуры'],
+  qf:['q','J/kg','yonish issiqligi','удельная теплота сгорания'], lamf:['λ','J/kg','erish issiqligi','удельная теплота плавления'], Lv:['L','J/kg','bug‘lanish issiqligi','удельная теплота парообразования'],
+  cs1:['c₁','J/(kg·K)','1-modda issiqlik sig‘imi','теплоёмкость 1'], cs2:['c₂','J/(kg·K)','2-modda issiqlik sig‘imi','теплоёмкость 2'], tm:['θ','°C','umumiy (aralashma) temperatura','общая температура смеси'],
+  // --- elektr 8
+  q1:['q₁','C','1-zaryad','заряд 1'], q2:['q₂','C','2-zaryad','заряд 2'], q:['q','C','zaryad','заряд'],
+  I:['I','A','tok kuchi','сила тока'], U:['U','V','kuchlanish','напряжение'], Rr:['R','Ω','qarshilik','сопротивление'],
+  R1:['R₁','Ω','1-qarshilik','сопротивление 1'], R2:['R₂','Ω','2-qarshilik','сопротивление 2'], Rs:['R_ket','Ω','ketma-ket umumiy qarshilik','общее (послед.)'], Rp:['R_par','Ω','parallel umumiy qarshilik','общее (паралл.)'],
+  rhoe:['ρ','Ω·m','solishtirma qarshilik','удельное сопротивление'], lw:['l','m','o‘tkazgich uzunligi','длина проводника'],
+  Pe:['P','W','elektr quvvati','электрическая мощность'], I1:['I₁','A','1-tok','ток 1'], I2:['I₂','A','2-tok','ток 2'], U1:['U₁','V','1-kuchlanish','напряжение 1'], U2:['U₂','V','2-kuchlanish','напряжение 2'],
+  // --- optika 9
+  alpha:['α','°','tushish / burchak','угол падения / угол'], beta:['β','°','sinish burchagi','угол преломления'], gam:['γ','°','qaytish burchagi','угол отражения'],
+  n1:['n₁','','1-muhit sindirish ko‘rsatkichi','показатель 1-й среды'], n2:['n₂','','2-muhit sindirish ko‘rsatkichi','показатель 2-й среды'], n21:['n₂₁','','nisbiy sindirish ko‘rsatkichi','относительный показатель'],
+  v1:['υ₁','m/s','1-tezlik','скорость 1'], v2:['υ₂','m/s','2-tezlik','скорость 2'], n:['n','','absolyut sindirish ko‘rsatkichi','абсолютный показатель преломления'],
+  alpha0:['α₀','°','to‘la ichki qaytish chegaraviy burchagi','предельный угол полного отражения'], D:['D','dpt','linzaning optik kuchi','оптическая сила линзы'],
+  K:['Γ','','chiziqli kattalashtirish','линейное увеличение'], H:['H','m','tasvir balandligi','высота изображения'], ho:['h','m','buyum balandligi','высота предмета'],
+  // --- 10 kinematika/dinamika
+  x:['x','m','koordinata','координата'], y:['y','m','vertikal koordinata','вертикальная координата'], tk:['t_k','s','ko‘tarilish vaqti','время подъёма'],
+  hmax:['h_max','m','maks. balandlik','макс. высота'], Lr:['L','m','uchish uzoqligi','дальность полёта'],
+  pm:['p','kg·m/s','jism impulsi','импульс тела'], dpm:['Δp','kg·m/s','impuls o‘zgarishi','изменение импульса'], dtt:['Δt','s','vaqt oralig‘i','промежуток времени'],
+  u1:['υ₁′','m/s','1-jism keyingi tezligi','скорость 1 после'], u2:['υ₂′','m/s','2-jism keyingi tezligi','скорость 2 после'],
+  Ek:['E_k','J','kinetik energiya','кинетическая энергия'], Ep:['E_p','J','potensial energiya','потенциальная энергия'],
+  M:['M','N·m','kuch momenti','момент силы'], S1:['S₁','m²','1-kesim yuzasi','сечение 1'], S2:['S₂','m²','2-kesim yuzasi','сечение 2'],
+  p1:['p₁','Pa','1-bosim','давление 1'], p2:['p₂','Pa','2-bosim','давление 2'], h1:['h₁','m','1-balandlik','высота 1'], h2:['h₂','m','2-balandlik','высота 2'],
+  // --- tebranish
+  Am:['A','m','amplituda','амплитуда'], phi0:['φ₀','°','boshlang‘ich faza','начальная фаза'], vmax:['υ_max','m/s','maks. tezlik','макс. скорость'], amax:['a_max','m/s²','maks. tezlanish','макс. ускорение'],
+  lp:['l','m','mayatnik uzunligi','длина маятника'], lam:['λ','m','to‘lqin uzunligi','длина волны'], Eosc:['E','J','tebranish to‘la energiyasi','полная энергия колебаний'],
+  // --- MKN, termodinamika
+  nc:['n','m⁻³','molekulalar konsentratsiyasi','концентрация молекул'], m0:['m₀','kg','bitta molekula massasi','масса молекулы'], vsq:['⟨υ²⟩','m²/s²','o‘rtacha kvadrat tezlik','средний квадрат скорости'],
+  Tk:['T','K','absolyut temperatura','абсолютная температура'], Mmol:['M','kg/mol','molyar massa','молярная масса'], nmol:['ν','mol','modda miqdori','количество вещества'],
+  Tk1:['T₁','K','1-temperatura','температура 1'], Tk2:['T₂','K','2-temperatura','температура 2'], V1:['V₁','m³','1-hajm','объём 1'], V2:['V₂','m³','2-hajm','объём 2'],
+  U_in:['U','J','ichki energiya','внутренняя энергия'], ifr:['i','','erkinlik darajasi (bir atomli: 3)','число степеней свободы'], dU:['ΔU','J','ichki energiya o‘zgarishi','изменение внутр. энергии'],
+  Wg:['A','J','gaz bajargan ish','работа газа'], dV:['ΔV','m³','hajm o‘zgarishi','изменение объёма'], TH:['T₁','K','isitgich temperaturasi','температура нагревателя'], TC:['T₂','K','sovitgich temperaturasi','температура холодильника'],
+  // --- elektrodinamika 10
+  E:['E','V/m','elektr maydon kuchlanganligi','напряжённость поля'], ds:['d','m','plastinalar orasidagi masofa','расстояние между пластинами'], eps:['ε','','dielektrik singdiruvchanlik','диэл. проницаемость'],
+  C:['C','F','sig‘im','ёмкость'], We:['W_e','J','kondensator energiyasi','энергия конденсатора'], emf:['ℰ','V','EYuK','ЭДС'], rin:['r','Ω','ichki qarshilik','внутреннее сопротивление'], ke:['k','kg/C','elektrokimyoviy ekvivalent','электрохим. эквивалент'],
+  // --- 11
+  B:['B','T','magnit induksiya','магнитная индукция'], Famp:['F_A','N','Amper kuchi','сила Ампера'], FL:['F_L','N','Lorens kuchi','сила Лоренца'],
+  Phi:['Φ','Wb','magnit oqimi','магнитный поток'], dPhi:['ΔΦ','Wb','magnit oqimi o‘zgarishi','изменение магн. потока'], emfi:['ℰᵢ','V','induksiya EYuK','ЭДС индукции'],
+  Lind:['L','H','induktivlik','индуктивность'], dI:['ΔI','A','tok o‘zgarishi','изменение тока'], Wm:['W_m','J','magnit maydon energiyasi','энергия магн. поля'],
+  N1:['N₁','','1-chulg‘am o‘ramlari','витков 1'], N2:['N₂','','2-chulg‘am o‘ramlari','витков 2'], kt:['k','','transformatsiya koeffitsiyenti','коэфф. трансформации'],
+  mr:['m','kg','relyativistik massa','релятивистская масса'], m0r:['m₀','kg','tinchlikdagi massa','масса покоя'], tau0:['τ₀','s','xususiy vaqt','собственное время'], tau:['τ','s','harakatdagi vaqt','время в движущейся СО'],
+  l0:['l₀','m','xususiy uzunlik','собственная длина'], lr:['l','m','qisqargan uzunlik','длина в движущейся СО'], uu:['u','m/s','nisbiy qo‘shilgan tezlik','релятивистская сумма скоростей'],
+  Etot:['E','J','to‘la energiya','полная энергия'], E0:['E₀','J','tinchlik energiyasi','энергия покоя'], Ekr:['E_k','J','relyativistik kinetik energiya','релятив. кинетическая энергия'],
+  lamm:['λ_m','m','maks. nurlanish to‘lqin uzunligi','длина волны максимума'], Eph:['E','J','foton energiyasi','энергия фотона'], Aw:['A_chiq','J','chiqish ishi','работа выхода'],
+  vel:['υ_max','m/s','fotoelektron maks. tezligi','макс. скорость фотоэлектрона'], nu0:['ν₀','Hz','qizil chegara chastotasi','красная граница (частота)'], lam0:['λ₀','m','qizil chegara to‘lqin uzunligi','красная граница (длина волны)'],
+  pph:['p','kg·m/s','foton impulsi','импульс фотона'], En2:['E₂','J','yuqori sath energiyasi','энергия верхнего уровня'], En1:['E₁','J','quyi sath energiyasi','энергия нижнего уровня'],
+  Zp:['Z','','protonlar soni','число протонов'], An:['A','','massa soni','массовое число'], Mnuc:['M_y','kg','yadro massasi','масса ядра'], dm:['Δm','kg','massalar defekti','дефект масс'],
+  Ebond:['E_bog‘','J','bog‘lanish energiyasi','энергия связи'], N0:['N₀','','boshlang‘ich yadrolar soni','начальное число ядер'], Nn:['N','','qolgan yadrolar soni','оставшееся число ядер'],
+  Thalf:['T','s','yarim yemirilish davri','период полураспада'], lamd:['λ','1/s','yemirilish doimiysi','постоянная распада'], Ad:['A′','','hosil bo‘lgan yadro massa soni','массовое число продукта'], Zd:['Z′','','hosil bo‘lgan yadro Z','зарядовое число продукта'],
+  Nneu:['N_n','','neytronlar soni','число нейтронов']
+};
+
+/* Constants (editable) */
+window.CONSTS = {
+  g:{sym:'g',val:10,unit:'m/s²',uz:'erkin tushish tezlanishi',ru:'ускорение свободного падения'},
+  pi:{sym:'π',val:3.14,unit:'',uz:'pi soni',ru:'число пи'},
+  G:{sym:'G',val:6.67e-11,unit:'N·m²/kg²',uz:'gravitatsiya doimiysi',ru:'гравитационная постоянная'},
+  kc:{sym:'k',val:9e9,unit:'N·m²/C²',uz:'Kulon doimiysi',ru:'постоянная Кулона'},
+  cl:{sym:'c',val:3e8,unit:'m/s',uz:'yorug‘lik tezligi',ru:'скорость света'},
+  hP:{sym:'h',val:6.63e-34,unit:'J·s',uz:'Plank doimiysi',ru:'постоянная Планка'},
+  Rg:{sym:'R',val:8.31,unit:'J/(mol·K)',uz:'universal gaz doimiysi',ru:'универсальная газовая постоянная'},
+  eps0:{sym:'ε₀',val:8.85e-12,unit:'F/m',uz:'elektr doimiysi',ru:'электрическая постоянная'},
+  kB:{sym:'k',val:1.38e-23,unit:'J/K',uz:'Bolsman doimiysi',ru:'постоянная Больцмана'},
+  bW:{sym:'b',val:2.898e-3,unit:'m·K',uz:'Vin doimiysi',ru:'постоянная Вина'},
+  me:{sym:'mₑ',val:9.11e-31,unit:'kg',uz:'elektron massasi',ru:'масса электрона'},
+  mp:{sym:'m_p',val:1.6726e-27,unit:'kg',uz:'proton massasi',ru:'масса протона'},
+  mn:{sym:'m_n',val:1.6749e-27,unit:'kg',uz:'neytron massasi',ru:'масса нейтрона'}
+};
+
+/* Unit alternatives per SI unit: [label, factor, offset?]  SI = value*factor + offset */
+window.UNITS = {
+  'm':[['m',1],['cm',1e-2],['mm',1e-3],['km',1e3],['μm',1e-6],['nm',1e-9]],
+  's':[['s',1],['min',60],['h',3600],['ms',1e-3]],
+  'kg':[['kg',1],['g',1e-3],['t',1e3],['a.m.b',1.66054e-27]],
+  'm/s':[['m/s',1],['km/h',1/3.6],['cm/s',1e-2]],
+  'N':[['N',1],['kN',1e3],['mN',1e-3]],
+  'J':[['J',1],['kJ',1e3],['MJ',1e6],['eV',1.602e-19],['MeV',1.602e-13]],
+  'W':[['W',1],['kW',1e3],['MW',1e6]],
+  'Pa':[['Pa',1],['kPa',1e3],['MPa',1e6],['atm',101325]],
+  'm²':[['m²',1],['cm²',1e-4],['mm²',1e-6]],
+  'm³':[['m³',1],['l',1e-3],['cm³',1e-6]],
+  'kg/m³':[['kg/m³',1],['g/cm³',1e3]],
+  'A':[['A',1],['mA',1e-3],['kA',1e3]],
+  'V':[['V',1],['kV',1e3],['mV',1e-3]],
+  'Ω':[['Ω',1],['kΩ',1e3],['MΩ',1e6]],
+  'C':[['C',1],['mC',1e-3],['μC',1e-6],['nC',1e-9]],
+  'F':[['F',1],['mF',1e-3],['μF',1e-6],['nF',1e-9],['pF',1e-12]],
+  'H':[['H',1],['mH',1e-3],['μH',1e-6]],
+  'Hz':[['Hz',1],['kHz',1e3],['MHz',1e6]],
+  'K':[['K',1],['°C',1,273.15]],
+  'J/kg':[['J/kg',1],['kJ/kg',1e3],['MJ/kg',1e6]],
+  'J/(kg·K)':[['J/(kg·K)',1],['kJ/(kg·K)',1e3]],
+  '°':[['°',1]], '%':[['%',1]],
+  'm/s²':[['m/s²',1]], 'T':[['T',1],['mT',1e-3]]
+};
+
+/* Topics */
+window.TOPICS = [
+  {id:'t6_matter',g:6,uz:'Modda zichligi',ru:'Плотность вещества'},
+  {id:'t6_motion',g:6,uz:'To‘g‘ri chiziqli tekis harakat',ru:'Равномерное прямолинейное движение'},
+  {id:'t6_mech',g:6,uz:'Richag, ish, quvvat, FIK',ru:'Рычаг, работа, мощность, КПД'},
+  {id:'t6_lens',g:6,uz:'Yupqa linza',ru:'Тонкая линза'},
+  {id:'t7_kin',g:7,uz:'Kinematika (tekis o‘zgaruvchan harakat)',ru:'Кинематика (равнопеременное движение)'},
+  {id:'t7_circ',g:7,uz:'Aylanma harakat',ru:'Движение по окружности'},
+  {id:'t7_dyn',g:7,uz:'Dinamika: Nyuton, Guk, og‘irlik, ishqalanish',ru:'Динамика: Ньютон, Гук, вес, трение'},
+  {id:'t7_fluid',g:7,uz:'Bosim, gidrostatika, Arximed',ru:'Давление, гидростатика, Архимед'},
+  {id:'t8_heat',g:8,uz:'Issiqlik hodisalari',ru:'Тепловые явления'},
+  {id:'t8_ohm',g:8,uz:'Kulon, tok, Om qonuni, quvvat, Joul–Lens',ru:'Кулон, ток, закон Ома, мощность, Джоуль–Ленц'},
+  {id:'t8_series',g:8,uz:'Ketma-ket ulash',ru:'Последовательное соединение'},
+  {id:'t8_parallel',g:8,uz:'Parallel ulash',ru:'Параллельное соединение'},
+  {id:'t9_optics',g:9,uz:'Yorug‘lik va optika',ru:'Свет и оптика'},
+  {id:'t10_proj',g:10,uz:'Otilgan jismlar',ru:'Движение брошенных тел'},
+  {id:'t10_cons',g:10,uz:'Impuls va energiya',ru:'Импульс и энергия'},
+  {id:'t10_stat',g:10,uz:'Statika va gidrodinamika',ru:'Статика и гидродинамика'},
+  {id:'t10_osc',g:10,uz:'Tebranishlar va to‘lqinlar',ru:'Колебания и волны'},
+  {id:'t10_mkn',g:10,uz:'MKN va gaz qonunlari',ru:'МКТ и газовые законы'},
+  {id:'t10_thermo',g:10,uz:'Termodinamika',ru:'Термодинамика'},
+  {id:'t10_elec',g:10,uz:'Elektrodinamika va o‘zgarmas tok',ru:'Электродинамика и постоянный ток'},
+  {id:'t11_mag',g:11,uz:'Magnit maydon va induksiya',ru:'Магнитное поле и индукция'},
+  {id:'t11_emw',g:11,uz:'Elektromagnit tebranishlar',ru:'Электромагнитные колебания'},
+  {id:'t11_rel',g:11,uz:'Maxsus nisbiylik nazariyasi',ru:'Специальная теория относительности'},
+  {id:'t11_quant',g:11,uz:'Kvant fizikasi va fotolar',ru:'Квантовая физика и фотоны'},
+  {id:'t11_nuc',g:11,uz:'Atom va yadro fizikasi',ru:'Атомная и ядерная физика'}
+];
