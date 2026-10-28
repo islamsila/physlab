@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PhysLab Solver — fizika masalalari yechuvchi</title>
+<title>PhysLab — fizika masalalari yechuvchi</title>
 <meta name="description" content="AI bilan fizika masalalarini yechish: PDF yoki rasm yuklang — yechim va animatsiya. O‘zbek / Русский.">
 <link rel="stylesheet" href="css/style.css"></head>
 <body class="locked">
 <div id="gate" class="gate"><div class="gatebox">
-  <div class="logo big">Φ</div><h1>PhysLab Solver</h1>
-  <p id="gateText">Fizika masalalarini AI bilan yeching: PDF yoki rasm yuklang — to‘liq yechim va animatsiya.</p>
+  <div class="logo big">Φ</div><h1>PhysLab</h1>
+  <p id="gateText">Fizika endi zerikarli formulalar emas. Masalani tashla, qolganini PhysLabga qo'yib ber!Fizika endi zerikarli formulalar emas. Masalani tashla, qolganini PhysLabga qo'yib ber!</p>
   <button class="gbtn" id="gBtn"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.9l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg><span id="gBtnT">Google bilan kirish</span></button>
   <div class="gmsg" id="gMsg"></div>
   <button class="gout" id="gOut" hidden>Boshqa akkaunt bilan kirish</button>
-  <small class="gfoot">Kirishingiz bilan ism va email manzilingiz administratorga ko‘rinadi.</small>
+  <small class="gfoot">Kirishda email manzilingiz va ismingizni yozib kirig</small>
 </div></div>
 <header class="top">
-  <div class="brand"><div class="logo">Φ</div><div><b>PhysLab Solver</b><small id="appSub"></small></div></div>
+  <div class="brand"><div class="logo">Φ</div><div><b>PhysLab</b><small id="appSub"></small></div></div>
   <nav><button data-v="ai" class="on" id="tabAI"></button><button data-v="solver" id="tabSolve"></button><button data-v="lib" id="tabLib"></button><button data-v="help" id="tabHelp"></button></nav>
   <div class="lang"><button data-l="uz" class="on">UZ</button><button data-l="ru">RU</button></div>
   <div class="userbar" id="userbar" hidden><img id="ubPhoto" alt="" referrerpolicy="no-referrer"><span id="ubName"></span><span class="quota" id="ubQuota" title="Bugungi AI so‘rovlar"></span><button id="ubOut" title="Chiqish">⎋</button></div>
