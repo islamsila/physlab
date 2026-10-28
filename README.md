@@ -45,3 +45,5 @@ chiqqan `scrypt$...` qatorini `ADMIN_PASSWORD_HASH` ga qo‘ying. (Node o‘rnat
 
 ## Fayllar
 `index.html`, `js/ai.js` (AI oynasi, PDF o‘qish), `js/scene.js` (universal animatsiya), `js/plan.js` + `js/safeexpr.js` (tekshiruv/hisob), `js/auth.js` (Google kirish), `admin.html` + `js/admin.js`, `api/*` (Vercel funksiyalari), `scripts/build-catalog.js` (formulalar o‘zgarsa `npm run catalog`), `tests/` (`npm test`).
+
+ 
