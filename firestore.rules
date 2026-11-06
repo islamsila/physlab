@@ -1,0 +1,7 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Hamma narsa faqat server (Admin SDK) orqali. Brauzerdan to'g'ridan-to'g'ri o'qish/yozish yopiq.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

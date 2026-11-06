@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PhysLab Solver — fizika masalalari yechuvchi</title>
+<meta name="description" content="AI bilan fizika masalalarini yechish: PDF yoki rasm yuklang — yechim va animatsiya. O‘zbek / Русский.">
+<link rel="stylesheet" href="css/style.css"></head>
+<body class="locked">
+<div id="gate" class="gate"><div class="gatebox">
+  <div class="logo big">Φ</div><h1>PhysLab Solver</h1>
+  <p id="gateText">Fizika masalalarini AI bilan yeching: PDF yoki rasm yuklang — to‘liq yechim va animatsiya.</p>
+  <div class="gmsg" id="gMsg"></div>
+  <small class="gfoot" id="gFoot">Ism-familyangiz administratorga ko‘rinadi.</small>
+</div></div>
+<header class="top">
+  <div class="brand"><div class="logo">Φ</div><div><b>PhysLab Solver</b><small id="appSub"></small></div></div>
+  <nav><button data-v="ai" class="on" id="tabAI"></button><button data-v="solver" id="tabSolve"></button><button data-v="lib" id="tabLib"></button><button data-v="help" id="tabHelp"></button></nav>
+  <div class="lang"><button data-l="uz" class="on">UZ</button><button data-l="ru">RU</button></div>
+  <div class="userbar" id="userbar" hidden><span id="ubName"></span><span class="quota" id="ubQuota" title="Bugungi AI so‘rovlar"></span></div>
+</header>
+<main>
+<section class="view on" id="view-ai"><div class="grid">
+  <aside class="col-input panel">
+    <div class="drop" id="aiDrop"><div class="dz">📄 PDF · 🖼 rasm / skrinshot</div><small id="aiDropT"></small>
+      <input type="file" id="aiFile" accept=".pdf,application/pdf,image/png,image/jpeg,image/webp" hidden><button class="btn sm" id="aiPick"></button></div>
+    <div id="pdfBox" hidden><div class="pdfh"><b id="pdfName"></b><button class="btn sm" id="pdfX">✕</button></div><input type="text" id="pdfSearch"><div id="pdfList" class="plist"></div></div>
+    <div id="aiImgBox" class="imgbox" hidden><img id="aiImg" alt=""><button id="aiImgX" class="btn sm">✕</button></div>
+    <div id="aiSelBox" hidden><label class="f" id="aiLText"></label><div id="aiText" class="selprev"></div></div>
+    <div><label class="f" id="aiLBook"></label><input type="text" id="aiBook"></div>
+    <label class="chk" id="aiPageWrap" hidden><input type="checkbox" id="aiPageImg"><span id="aiLPage"></span></label>
+    <div class="btns"><button class="btn pri" id="aiSolve"></button></div>
+    <div class="note" id="aiQuota"></div><div class="warn" id="aiMsg"></div>
+  </aside>
+  <div class="col-out">
+    <div class="panel stage"><div class="stagehead"><div><div class="ft" id="aiStName"></div></div><div class="eq" id="aiStEq"></div></div>
+      <div class="cv"><canvas id="aiCv"></canvas></div>
+      <div class="ctrl"><button class="btn sm" id="aiPlay"></button><button class="btn sm" id="aiRestart"></button><input type="range" id="aiScrub" min="0" max="1000" value="0" title="Vaqt"><small id="aiLSpeed"></small><input type="range" id="aiSpeed" min="0.25" max="3" step="0.05" value="1"></div></div>
+    <div id="aiSolution"></div>
+  </div>
+</div></section>
+<section class="view" id="view-solver"><div class="grid">
+  <aside class="col-input panel">
+    <div><label class="f" id="lTopic"></label><select id="topic"></select></div>
+    <div><label class="f" id="lExamples"></label><select id="examples"></select></div>
+    <div><h3><span id="hGiven"></span></h3><div id="givenRows"></div><button class="btn sm" id="bAddGiven"></button></div>
+    <div><h3><span id="hFind"></span></h3><div class="chips" id="findChips"></div><select id="findSel"></select></div>
+    <details><summary id="hConsts"></summary><div id="consts"></div></details>
+    <div class="btns"><button class="btn pri" id="bSolve"></button><button class="btn" id="bClear"></button></div>
+    <div class="note" id="liveNote"></div><div class="warn" id="warns"></div>
+  </aside>
+  <div class="col-out">
+    <div class="panel stage"><div class="stagehead"><div><div class="ft" id="stName"></div></div><div class="eq" id="stEq"></div></div>
+      <div class="cv"><canvas id="cv"></canvas></div>
+      <div class="ctrl"><button class="btn sm" id="bPlay"></button><button class="btn sm" id="bRestart"></button><small id="lSpeed"></small><input type="range" id="speed" min="0.25" max="3" step="0.05" value="1"></div></div>
+    <div id="solution"></div>
+  </div>
+</div></section>
+<section class="view" id="view-lib"><div class="toolbar"><input type="text" id="fsearch"><select id="fgrade"></select></div><div id="flib"></div></section>
+<section class="view help" id="view-help"></section>
+</main>
+<footer id="footer"></footer>
+<script src="js/safeexpr.js"></script><script src="js/plan.js"></script>
+<script src="js/vars.js"></script><script src="js/f6_7.js"></script><script src="js/f8_9.js"></script><script src="js/f10.js"></script><script src="js/f11.js"></script>
+<script src="js/solver.js"></script><script src="js/engine.js"></script><script src="js/anim_mech.js"></script><script src="js/anim_heat.js"></script><script src="js/anim_modern.js"></script><script src="js/scene.js"></script>
+<script src="js/i18n.js"></script><script src="js/app.js"></script><script src="js/ai.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body></html>

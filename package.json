@@ -1,0 +1,12 @@
+{
+  "name": "physlab",
+  "private": true,
+  "version": "2.0.0",
+  "engines": { "node": ">=20" },
+  "dependencies": { "firebase-admin": "^12.7.0" },
+  "scripts": {
+    "catalog": "node scripts/build-catalog.js",
+    "hash": "node scripts/hash-password.js",
+    "test": "node tests/run.js"
+  }
+}

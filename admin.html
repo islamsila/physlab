@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>PhysLab — Admin panel</title>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/admin.css"></head>
+<body class="adm">
+<div id="loginView" class="gate" style="display:grid"><form class="gatebox" id="loginForm" autocomplete="on">
+  <div class="logo big">Φ</div><h1>Admin panel</h1><p>PhysLab Solver boshqaruvi</p>
+  <input type="text" id="lUser" name="username" placeholder="Login" autocomplete="username" required>
+  <input type="password" id="lPass" name="password" placeholder="Parol" autocomplete="current-password" required style="margin-top:10px">
+  <button class="btn pri" id="lBtn" style="width:100%;margin-top:14px;padding:12px" type="submit">Kirish</button>
+  <div class="gmsg" id="lMsg"></div><div id="lLock" class="lockbox" hidden></div>
+</form></div>
+<div id="app" hidden>
+  <header class="top"><div class="brand"><div class="logo">Φ</div><div><b>PhysLab Admin</b><small id="who"></small></div></div>
+    <nav id="tabs"><button data-t="dash" class="on">Statistika</button><button data-t="users">Foydalanuvchilar</button><button data-t="logs">AI so‘rovlar</button><button data-t="set">Sozlamalar</button><button data-t="sec">Xavfsizlik</button></nav>
+    <a class="btn sm" href="/" style="text-decoration:none">Saytga ↗</a><button class="btn sm" id="outBtn">Chiqish</button></header>
+  <main class="admmain">
+    <section class="view on" id="t-dash"><div id="cards" class="cards"></div><div class="two"><div class="panel"><h3>So‘nggi 14 kun</h3><div id="chart"></div></div><div class="panel"><h3>Eng faol foydalanuvchilar (AI)</h3><div id="top"></div><h3 style="margin-top:18px">Yangi qo‘shilganlar</h3><div id="recent"></div></div></div></section>
+    <section class="view" id="t-users"><div class="panel"><div class="toolbar2"><input type="text" id="uq" placeholder="Ism yoki email bo‘yicha qidirish…"><span id="ucount" class="note"></span><button class="btn sm" id="uref">↻ Yangilash</button><button class="btn sm" id="ucsv">⬇ CSV</button></div><div class="tw"><table id="utab"></table></div></div></section>
+    <section class="view" id="t-logs"><div class="panel"><div class="toolbar2"><span class="note">Oxirgi AI so‘rovlar (kim, nima yechdi, natija)</span><button class="btn sm" id="lref">↻ Yangilash</button><button class="btn sm danger" id="lclr">Barchasini tozalash</button></div><div class="tw"><table id="ltab"></table></div></div></section>
+    <section class="view" id="t-set"><div class="panel" style="max-width:720px"><h3>Sayt va AI sozlamalari</h3><div id="setForm"></div></div></section>
+    <section class="view" id="t-sec"><div class="panel" style="max-width:520px"><h3>Parolni almashtirish</h3>
+      <label class="f">Joriy parol</label><input type="password" id="pCur" autocomplete="current-password"><label class="f" style="margin-top:10px">Yangi parol (kamida 10 belgi)</label><input type="password" id="pNew" autocomplete="new-password"><label class="f" style="margin-top:10px">Yangi parol (takror)</label><input type="password" id="pNew2" autocomplete="new-password">
+      <button class="btn pri" id="pBtn" style="margin-top:14px">Saqlash</button><div id="pMsg" class="note" style="margin-top:8px"></div>
+      <p class="note" style="margin-top:18px">Himoya: ketma-ket 3 ta noto‘g‘ri urinishdan keyin kirish 1 soatga yopiladi (barcha qurilmalar uchun). Parol almashtirilsa, boshqa qurilmalardagi sessiyalar tugatiladi.</p></div></section>
+  </main>
+  <div id="toast" class="toast"></div>
+</div>
+<script src="js/admin.js"></script>
+</body></html>
